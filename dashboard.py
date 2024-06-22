@@ -1,6 +1,8 @@
 import tkinter as tk
 from tkinter import Menu
 import brand_page  # Import halaman Brand
+import category_page
+import product_page
 
 class DashboardApp:
     def __init__(self, root):
@@ -20,6 +22,13 @@ class DashboardApp:
 
         # Submenu for Brand
         items_menu.add_command(label="Brand", command=self.open_brand_page)
+
+        # Submenu for category
+        items_menu.add_command(label="Category", command=self.open_category_page)
+
+        # Submenu for product
+        items_menu.add_command(label="Product", command=self.open_product_page)
+
 
         # Create Orders menu
         orders_menu = Menu(menubar, tearoff=0)
@@ -48,6 +57,16 @@ class DashboardApp:
         brand_root = tk.Tk()
         app = brand_page.BrandPage(brand_root)
         brand_root.mainloop()
+
+    def open_category_page(self):
+        category_root = tk.Tk()
+        app = category_page.CategoryPage(category_root)
+        category_root.mainloop()
+
+    def open_product_page(self):
+        product_root = tk.Tk()
+        app = product_page.ProductPage(product_root)
+        product_root.mainloop()
 
 if __name__ == "__main__":
     root = tk.Tk()

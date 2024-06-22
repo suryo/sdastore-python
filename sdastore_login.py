@@ -23,7 +23,7 @@ class LoginApp:
         # Adding logo
         try:
             self.logo_img = Image.open("logo-sda.png")  # Use the PNG image
-            self.logo_img = self.logo_img.resize((100, 100), Image.ANTIALIAS)
+            self.logo_img = self.logo_img.resize((300, 100), Image.ANTIALIAS)
             self.logo = ImageTk.PhotoImage(self.logo_img)
             self.logo_label = tk.Label(self.root, image=self.logo, bg="white")
             self.logo_label.pack(pady=10)
@@ -37,6 +37,7 @@ class LoginApp:
         # Entry for username
         self.entry_user = tk.Entry(self.root)
         self.entry_user.pack(pady=5)
+        self.entry_user.insert(0,'adminsdastore')
 
         # Label for password
         self.label_pass = tk.Label(self.root, text="Password:", bg="white")
@@ -45,10 +46,12 @@ class LoginApp:
         # Entry for password
         self.entry_pass = tk.Entry(self.root, show='*')
         self.entry_pass.pack(pady=5)
+        self.entry_pass.insert(0,'12345678')
+
 
         # Login button
-        self.login_btn = tk.Button(self.root, text="Login", command=self.check_login)
-        self.login_btn.pack(pady=10)
+        self.login_button = tk.Button(self.root, text="Login", command=self.check_login)
+        self.login_button.pack(pady=20)
 
     def check_login(self):
         username = self.entry_user.get()
