@@ -4,7 +4,7 @@ import requests
 from sub_product_page import SubProductPage  # Import halaman sub_product_page.py
 
 # Base URL of the API
-BASE_URL = "http://127.0.0.1:8000"
+BASE_URL = "https://tokosda.com/previewbeta/sdastore-laravel/public"
 
 class ProductPage:
     def __init__(self, root):

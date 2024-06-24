@@ -3,7 +3,7 @@ from tkinter import ttk, messagebox, simpledialog
 import requests
 
 # Base URL of the API
-BASE_URL = "http://127.0.0.1:8000"
+BASE_URL = "https://tokosda.com/previewbeta/sdastore-laravel/public"
 
 class SubProductPage:
     def __init__(self, root, product_id):
